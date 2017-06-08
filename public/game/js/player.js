@@ -18,7 +18,7 @@ class Player{
         deathSound.play();
         deaths++;
         stage = dead;
-        window.setTimeout(()=>{stage = setup;}, 3000);
+        window.setTimeout(()=>{stage = setup;}, 2000);
     };
     draw(){
         ctx.drawImage(this.image,
