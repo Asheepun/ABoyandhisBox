@@ -25,6 +25,15 @@ body {
     border:1px solid black;
 }
 
+#twitter:hover {
+    background: #a0db8e;;
+}
+
+#twitter > img {
+    width:40px;
+    border-radius:10px;
+}
+
 a {
     text-decoration: none;
     color:black;
