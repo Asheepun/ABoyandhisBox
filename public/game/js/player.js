@@ -18,21 +18,13 @@ class Player{
         deathSound.play();
         deaths++;
         stage = dead;
-        window.setTimeout(()=>{stage = setup;}, 3000);
+        window.setTimeout(()=>{stage = setup;}, 2000);
     };
     draw(){
         ctx.drawImage(this.image,
             (this.image.width/3)*Math.floor(this.imgPos.x), this.image.height/2*this.imgPos.y,
             this.image.width/3, this.image.height/2,
             this.pos.x, this.pos.y, this.size.x, this.size.y);
-
-        //drawing deaths and countDown
-        ctx.fillStyle="red";
-        ctx.font=(scl/3)*4 + "px Graduate";
-        if(currentLevel != levels.length-1) ctx.fillText(deaths, c.width/2 - offSet.x, 50 - offSet.y);
-        if(countDown > 0){
-            ctx.fillText(countDown, this.pos.x, this.pos.y-20);
-        }
     }
     update(){
         this.origin.x = this.pos.x + this.size.x/2;
@@ -90,6 +82,12 @@ class Player{
             this.pos.x -= this.speed.left;
 
         col = checkColission(this, boxes);
+        if(col.down){
+            this.pos.y = col.object.pos.y - this.size.x;
+            if(!keys.w.down) this.jumping = false;
+        }
+
+        col = checkColission(this, platforms);
         if(col.down){
             this.pos.y = col.object.pos.y - this.size.x;
             if(!keys.w.down) this.jumping = false;

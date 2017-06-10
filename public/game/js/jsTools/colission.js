@@ -100,22 +100,26 @@ function checkSidesOnGrid(character, object, grid, dist = 1){
     let y = Math.floor((character.pos.y+1)/scl);
     let x2 = Math.floor((character.pos.x+character.size.x-1)/scl);
     let y2 = Math.floor((character.pos.y+character.size.y-1)/scl);
-   
-    if(grid[y][x+dist] === object
-    || grid[y2][x+dist] === object)
-        result.right = true;
-
-    if(grid[y+dist][x] === object
-    || grid[y+dist][x2] === object)
-         result.down = true;
-
-     if(grid[y][x2-dist] === object
-    || grid[y2][x2-dist] === object)
-        result.left = true;
-
-    if(grid[y2-dist][x] === object
-    || grid[y2-dist][x2] === object)
-        result.up = true;
+    if(x != map[0].length-1){
+        if(grid[y][x+dist] === object
+        || grid[y2][x+dist] === object)
+            result.right = true;
+    }
+    if(y != map.length-1){
+        if(grid[y+dist][x] === object
+        || grid[y+dist][x2] === object)
+            result.down = true;
+    }
+    if(x2 != 0){
+        if(grid[y][x2-dist] === object
+        || grid[y2][x2-dist] === object)
+            result.left = true;
+    }
+    if(y2 != 0){        
+        if(grid[y2-dist][x] === object
+        || grid[y2-dist][x2] === object)
+            result.up = true;
+    }
     return result;
 }
 

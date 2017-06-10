@@ -14,11 +14,10 @@ function initializeKeyboard({ fullscreen, action}){
     document.addEventListener("keyup", e => {keyHandler(e, false)});
     document.addEventListener("keydown", e => {
         if(e.keyCode === 70){
-            if(!(screen.width == window.innerWidth && screen.height == window.innerHeight))
-            fullscreen.webkitRequestFullscreen();
-            else document.webkitExitFullscreen();
-            action();
-    }});
+            toggleFullscreen(fullscreen);
+            action()
+        }
+    });
 
     function keyHandler(e, down){
         switch(e.keyCode){
@@ -42,4 +41,19 @@ function initializeKeyboard({ fullscreen, action}){
                 break;
         }
     }
+}
+
+function toggleFullscreen(element){
+    if(!(screen.width == window.innerWidth && screen.height == window.innerHeight)){
+                let rfs = element.webkitRequestFullscreen
+                      ||  element.mozRequestFullscreen
+                      ||  element.msRequestFullscreen;
+                rfs.call(element);
+            }
+            else {
+                let efs = document.webkitExitFullscreen
+                       || document.mozCancelFullscreen
+                       || document.msRequestFullscreen;
+                efs.call(document);
+            }
 }

@@ -15,6 +15,7 @@ function setup(){
         folieges,
         levels,
         walls,
+        platforms,
         poofs,
         helpers,
         enemies,
@@ -28,7 +29,7 @@ function setup(){
     c = document.getElementById("mainCanvas");
     ctx = c.getContext("2d");
     console.log();
-    c.width =grid(26);
+    c.width = grid(26);
     c.height = grid(16);
     offSet.x = 0;
     offSet.y = 0;
@@ -54,35 +55,37 @@ function game(){
 }
 
 function update(){
-        updateArrays([
-            players,
-            points,
-            enemies,
-            helpers,
-            poofs,
-            texts,
-        ]);
-        updateOffSet();
+    updateArrays([
+        players,
+        points,
+        enemies,
+        helpers,
+        poofs,
+        texts,
+    ]);
+    updateOffSet();
 }
 
 function draw(){
-        ctx.save();
-        ctx.translate(offSet.x, offSet.y);
-        drawBackground();
-        drawArrays([
-            walls,
-            poofs,
-            boxes,
-            obstacles,
-            points,
-            helpers,
-            players,
-            folieges,
-            enemies,
-            texts,
-        ]);
-        drawLastLevel();
-        ctx.restore();
+    ctx.save();
+    ctx.translate(offSet.x, offSet.y);
+    drawBackground();
+    drawArrays([
+        walls,
+        platforms,
+        poofs,
+        boxes,
+        obstacles,
+        points,
+        helpers,
+        players,
+        folieges,
+        enemies,
+        texts,
+    ]);
+    drawLastLevel();
+    drawNumbers();
+    ctx.restore();
 }
 
 function dead(){
@@ -128,4 +131,13 @@ function togglefs(){
         scl = 30;
         stage = setup;
     }
+}
+
+function drawNumbers(){
+    ctx.fillStyle="red";
+    ctx.font=(scl/3)*4 + "px Graduate";
+    if(currentLevel != levels.length-1) 
+        ctx.fillText(deaths, c.width/2 - offSet.x, 50 - offSet.y);
+    if(countDown > 0)
+        ctx.fillText(countDown, players[0].pos.x, players[0].pos.y-20);
 }

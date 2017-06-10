@@ -1,32 +1,35 @@
 const obstacleImg = new Image();
-obstacleImg.src="/game/sprites/Obstacle.png";
+obstacleImg.src="sprites/Obstacle.png";
 
 const obstacleImg2 = new Image();
-obstacleImg2.src="/game/sprites/Obstacle2.png";
+obstacleImg2.src="sprites/Obstacle2.png";
 
 const backgroundImg = new Image();
-backgroundImg.src="/game/sprites/Background.png";
+backgroundImg.src="sprites/Background.png";
 
 const playerImg = new Image();
-playerImg.src="/game/sprites/player.png";
+playerImg.src="sprites/player.png";
 
 const boxImg = new Image();
-boxImg.src="/game/sprites/box.png"
+boxImg.src="sprites/box.png"
 
 const enemyImg = new Image();
-enemyImg.src="/game/sprites/enemy.png";
+enemyImg.src="sprites/enemy.png";
 
 const pointImg = new Image();
-pointImg.src="/game/sprites/point.png";
+pointImg.src="sprites/point.png";
 
 const helperImg = new Image();
-helperImg.src="/game/sprites/helper.png";
+helperImg.src="sprites/helper.png";
 
 const wallImg = new Image();
-wallImg.src="/game/sprites/wall.png"
+wallImg.src="sprites/wall.png"
 
 const foliegeImg = new Image();
-foliegeImg.src="/game/sprites/foliege.png";
+foliegeImg.src="sprites/foliege.png";
 
 const spikeImg = new Image();
-spikeImg.src="/game/sprites/spike.png";
+spikeImg.src="sprites/spike.png";
+
+const platformImg = new Image();
+platformImg.src="sprites/platform.png";
