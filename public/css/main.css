@@ -14,6 +14,7 @@ body {
 
 #main {
     width:790px;
+    height:591px;
     margin:0px auto;
     background:#6dc066;
     text-align:center;
@@ -32,22 +33,6 @@ body {
     width:40px;
     border-radius:10px;
     border:1px solid darkblue;
-}
-
-#comment-section {
-    background:#fff093;
-    border:1px solid #368059;
-    width:400px;
-    margin:0px auto;
-    padding:10px;
-    text-align:center;
-}
-
-.comment {
-    font-size:20px;
-    border:1px solid black;
-    margin:10px auto;
-
 }
 
 a {
