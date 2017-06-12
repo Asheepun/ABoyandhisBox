@@ -6,6 +6,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Graduate|VT323" rel="stylesheet">
         <link rel="shortcut icon" href="/assets/pl.png">
+        <script src="/socket.io/socket.io.js"></script>
     </head>
     <body>
         <nav>
@@ -19,23 +20,27 @@
         <div id="main">
             <canvas id="mainCanvas"></canvas>
             <p>Press F to toggle fullscreen!</p>
-            <script src="/game/js/jsTools/array.js"></script>
-            <script src="/game/js/jsTools/keyboard.js"></script>
-            <script src="/game/js/jsTools/pointer.js"></script>
-            <script src="/game/js/jsTools/vectors.js"></script>
-            <script src="/game/js/jsTools/colission.js"></script>
-            <script src="/game/js/jsTools/text.js"></script>
-            <script src="/game/js/poofs.js"></script>
-            <script src="/game/js/audio.js"></script>
-            <script src="/game/js/helpers.js"></script>
-            <script src="/game/js/levels.js"></script>
-            <script src="/game/js/points.js"></script>
-            <script src="/game/js/box.js"></script>
-            <script src="/game/js/enemies.js"></script>
-            <script src="/game/js/sprites.js"></script>
-            <script src="/game/js/world.js"></script>
-            <script src="/game/js/player.js"></script>
-            <script src="/game/js/game.js"></script>
+            <div id="comment-section">
+                <input id="input" type="text" placeholder="write a comment"></input><input onclick="comment()" type="button" value="submit"></input>
+            </div>
         </div>
+        <script src="/js/comments.js"></script>
+        <script src="/game/js/jsTools/array.js"></script>
+        <script src="/game/js/jsTools/keyboard.js"></script>
+        <script src="/game/js/jsTools/pointer.js"></script>
+        <script src="/game/js/jsTools/vectors.js"></script>
+        <script src="/game/js/jsTools/colission.js"></script>
+        <script src="/game/js/jsTools/text.js"></script>
+        <script src="/game/js/poofs.js"></script>
+        <script src="/game/js/audio.js"></script>
+        <script src="/game/js/helpers.js"></script>
+        <script src="/game/js/levels.js"></script>
+        <script src="/game/js/points.js"></script>
+        <script src="/game/js/box.js"></script>
+        <script src="/game/js/enemies.js"></script>
+        <script src="/game/js/sprites.js"></script>
+        <script src="/game/js/world.js"></script>
+        <script src="/game/js/player.js"></script>
+        <script src="/game/js/game.js"></script>
     </body>
 </html>

@@ -23,7 +23,7 @@ class Player{
     draw(){
         ctx.drawImage(this.image,
             (this.image.width/3)*Math.floor(this.imgPos.x), this.image.height/2*this.imgPos.y,
-            this.image.width/3, this.image.height/2,
+            this.image.width/3, this.image.height/2-1,
             this.pos.x, this.pos.y, this.size.x, this.size.y);
     }
     update(){
