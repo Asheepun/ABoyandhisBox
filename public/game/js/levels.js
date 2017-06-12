@@ -63,10 +63,6 @@ function initializeLevels(){
     
     const level11 = new Level(map11,
         [new Searcher(grid(15), grid(11), grid(2), grid(2))]);
-
-    const level12 = new Level(map12,
-        [new Enemy(grid(10), grid(9), -scl/10, 0, grid(3), grid(3)),
-         new Enemy(grid(20), grid(2), scl/10, 0, grid(2), grid(2))], []);
     
     const lastLevel = new Level(lastMap);
 }
