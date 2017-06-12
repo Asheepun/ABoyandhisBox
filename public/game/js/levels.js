@@ -1,6 +1,6 @@
 const levels = new Array();
 
-let currentLevel = 9;
+let currentLevel = 0;
 
 class Level{
     constructor(map = [], enemies = [], helpers = []){
