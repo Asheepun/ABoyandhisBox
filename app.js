@@ -18,19 +18,3 @@ app.get("/game", (req, res) => {
 app.get("/credits", (req, res) => {
     res.sendFile(__dirname + "/view/credits.html");
 });
-
-const socket = require("socket.io");
-const io = socket(server);
-
-const comments = new Array();
-
-io.on("connection", socket => {
-    let data = {
-        comments,
-    }
-    socket.emit("comments", data);
-
-    socket.on("comment", data => {
-        if(data.comment != "")comments.push(data.comment);
-    });
-});
